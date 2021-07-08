@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Text Utility</title>
+</head>
+<body>
+<nav class="navbar navbar-light">
+    <a class="navbar-brand" href="#">
+        <img src="https://pngimg.com/uploads/lamborghini/lamborghini_PNG10709.png" width="30" height="30"
+             class="d-inline-block align-top"
+             alt="">
+        Text Utility
+    </a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    Have fun with text!
+</div>
+
+<br>
+
+<div class="container">
+    <form method="post" action="analyze"> {% csrf_token %}
+        <div class="mb-3">
+            <label for="text" class="form-label">Enter text below</label>
+            <textarea class="form-control" name="text" id="text" rows="7" placeholder="Text" style="resize:none"></textarea>
+        </div>
+
+        <br>
+
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" name="remove_punctuations" id="remove_punctuations">
+            <label class="custom-control-label" for="remove_punctuations">Remove Punctuations</label>
+        </div>
+
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" name="capitalize_first" id="capitalize_first" >
+            <label class="custom-control-label" for="capitalize_first">Capitalize First Character of each word</label>
+        </div>
+
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" name="remove_spaces" id="remove_spaces" >
+            <label class="custom-control-label" for="remove_spaces">Remove Spaces</label>
+        </div>
+
+        <br>
+
+        <button type="submit" class="btn btn-primary">Analyze</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
